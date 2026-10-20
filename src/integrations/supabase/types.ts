@@ -14,16 +14,381 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      assessments: {
+        Row: {
+          created_at: string
+          description: string | null
+          duration_minutes: number
+          employer_id: string
+          id: string
+          pass_mark: number
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          duration_minutes?: number
+          employer_id: string
+          id?: string
+          pass_mark?: number
+          title: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          duration_minutes?: number
+          employer_id?: string
+          id?: string
+          pass_mark?: number
+          title?: string
+        }
+        Relationships: []
+      }
+      attempts: {
+        Row: {
+          answers: Json
+          assessment_id: string
+          copy_events: number
+          employer_id: string
+          events: Json
+          graduate_id: string
+          id: string
+          invitation_id: string
+          score: number | null
+          started_at: string
+          submitted_at: string | null
+          tab_switches: number
+          total: number | null
+        }
+        Insert: {
+          answers?: Json
+          assessment_id: string
+          copy_events?: number
+          employer_id: string
+          events?: Json
+          graduate_id: string
+          id?: string
+          invitation_id: string
+          score?: number | null
+          started_at?: string
+          submitted_at?: string | null
+          tab_switches?: number
+          total?: number | null
+        }
+        Update: {
+          answers?: Json
+          assessment_id?: string
+          copy_events?: number
+          employer_id?: string
+          events?: Json
+          graduate_id?: string
+          id?: string
+          invitation_id?: string
+          score?: number | null
+          started_at?: string
+          submitted_at?: string | null
+          tab_switches?: number
+          total?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "attempts_assessment_id_fkey"
+            columns: ["assessment_id"]
+            isOneToOne: false
+            referencedRelation: "assessments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "attempts_invitation_id_fkey"
+            columns: ["invitation_id"]
+            isOneToOne: true
+            referencedRelation: "invitations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      documents: {
+        Row: {
+          created_at: string
+          id: string
+          kind: string
+          name: string
+          path: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          kind: string
+          name: string
+          path: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          kind?: string
+          name?: string
+          path?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      employers: {
+        Row: {
+          address: string | null
+          approved: boolean
+          company_name: string
+          contact_name: string | null
+          contact_phone: string | null
+          created_at: string
+          industry: string | null
+          rc_number: string | null
+          user_id: string
+          website: string | null
+        }
+        Insert: {
+          address?: string | null
+          approved?: boolean
+          company_name?: string
+          contact_name?: string | null
+          contact_phone?: string | null
+          created_at?: string
+          industry?: string | null
+          rc_number?: string | null
+          user_id: string
+          website?: string | null
+        }
+        Update: {
+          address?: string | null
+          approved?: boolean
+          company_name?: string
+          contact_name?: string | null
+          contact_phone?: string | null
+          created_at?: string
+          industry?: string | null
+          rc_number?: string | null
+          user_id?: string
+          website?: string | null
+        }
+        Relationships: []
+      }
+      graduate_profiles: {
+        Row: {
+          available: boolean
+          bio: string | null
+          cgpa: number | null
+          course: string | null
+          created_at: string
+          date_of_birth: string | null
+          degree_class: string | null
+          email: string | null
+          faculty: string | null
+          full_name: string
+          gender: string | null
+          graduation_year: number | null
+          institution: string | null
+          institution_type: string | null
+          nysc_status: string | null
+          phone: string | null
+          preferred_location: string | null
+          qualification: string | null
+          skills: string[]
+          state_of_residence: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          available?: boolean
+          bio?: string | null
+          cgpa?: number | null
+          course?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          degree_class?: string | null
+          email?: string | null
+          faculty?: string | null
+          full_name?: string
+          gender?: string | null
+          graduation_year?: number | null
+          institution?: string | null
+          institution_type?: string | null
+          nysc_status?: string | null
+          phone?: string | null
+          preferred_location?: string | null
+          qualification?: string | null
+          skills?: string[]
+          state_of_residence?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          available?: boolean
+          bio?: string | null
+          cgpa?: number | null
+          course?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          degree_class?: string | null
+          email?: string | null
+          faculty?: string | null
+          full_name?: string
+          gender?: string | null
+          graduation_year?: number | null
+          institution?: string | null
+          institution_type?: string | null
+          nysc_status?: string | null
+          phone?: string | null
+          preferred_location?: string | null
+          qualification?: string | null
+          skills?: string[]
+          state_of_residence?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      invitations: {
+        Row: {
+          assessment_id: string | null
+          created_at: string
+          employer_id: string
+          graduate_id: string
+          id: string
+          kind: string
+          location: string | null
+          message: string | null
+          scheduled_at: string | null
+          status: string
+          title: string
+        }
+        Insert: {
+          assessment_id?: string | null
+          created_at?: string
+          employer_id: string
+          graduate_id: string
+          id?: string
+          kind?: string
+          location?: string | null
+          message?: string | null
+          scheduled_at?: string | null
+          status?: string
+          title: string
+        }
+        Update: {
+          assessment_id?: string | null
+          created_at?: string
+          employer_id?: string
+          graduate_id?: string
+          id?: string
+          kind?: string
+          location?: string | null
+          message?: string | null
+          scheduled_at?: string | null
+          status?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "invitations_assessment_id_fkey"
+            columns: ["assessment_id"]
+            isOneToOne: false
+            referencedRelation: "assessments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      questions: {
+        Row: {
+          assessment_id: string
+          correct_index: number
+          id: string
+          options: Json
+          position: number
+          prompt: string
+        }
+        Insert: {
+          assessment_id: string
+          correct_index?: number
+          id?: string
+          options?: Json
+          position?: number
+          prompt: string
+        }
+        Update: {
+          assessment_id?: string
+          correct_index?: number
+          id?: string
+          options?: Json
+          position?: number
+          prompt?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "questions_assessment_id_fkey"
+            columns: ["assessment_id"]
+            isOneToOne: false
+            referencedRelation: "assessments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_attempt_questions: {
+        Args: { _attempt_id: string }
+        Returns: {
+          id: string
+          options: Json
+          prompt: string
+          q_position: number
+        }[]
+      }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      is_approved_employer: { Args: { _uid: string }; Returns: boolean }
+      log_attempt_event: {
+        Args: { _attempt_id: string; _kind: string }
+        Returns: undefined
+      }
+      set_my_role: {
+        Args: { _role: Database["public"]["Enums"]["app_role"] }
+        Returns: undefined
+      }
+      start_attempt: { Args: { _invitation_id: string }; Returns: string }
+      submit_attempt: {
+        Args: { _answers: Json; _attempt_id: string }
+        Returns: number
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "employer" | "graduate"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +515,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "employer", "graduate"],
+    },
   },
 } as const
