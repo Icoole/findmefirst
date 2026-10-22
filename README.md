@@ -1,14 +1,22 @@
-# Welcome to your Lovable project
+# Findmefirst
+
+a platform that allows graduate fresh graduate fills their details, school details , class of degrees , year of graduation course of study, attaching certificates and relevant schools, that relevant companies can subscribe to filter by schools , class of degrees and sends them invite for interviews and assessment ..... the platform can also allows conduct of job test monitored by the company
+
+Design and Development of an Online Graduate Recruitment and Assessment Platform for Connecting Nigerian Graduates with Employers
+
+this is different from linkedin, here employers can filter candidates with age, class of degrees whether firstclass or second class upper
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://findmefirst.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e49ce173-d4c5-4afa-81c1-a3f6d17d03d1).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +28,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
