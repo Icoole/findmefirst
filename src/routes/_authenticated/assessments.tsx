@@ -44,7 +44,7 @@ function Assessments() {
     if (error) return toast.error(error.message);
     const rows = valid.map((q, i) => {
       const opts = q.options.filter(Boolean);
-      const correctText = q.options[q.correct];
+      const correctText = q.options[q.correct] ?? "";
       return { assessment_id: a.id, position: i, prompt: q.prompt, options: opts, correct_index: Math.max(0, opts.indexOf(correctText)) };
     });
     const { error: e2 } = await supabase.from("questions").insert(rows);
