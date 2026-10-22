@@ -6,7 +6,8 @@ import { useMe } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
 
-const NAV = {
+type NavItem = { to: "/profile" | "/invitations" | "/search" | "/assessments" | "/results" | "/company" | "/admin"; label: string };
+const NAV: Record<"graduate" | "employer" | "admin", NavItem[]> = {
   graduate: [
     { to: "/profile", label: "My profile" },
     { to: "/invitations", label: "Invitations" },
@@ -18,14 +19,14 @@ const NAV = {
     { to: "/company", label: "Company" },
   ],
   admin: [{ to: "/admin", label: "Approve employers" }],
-} as const;
+};
 
 export function AppShell() {
   const { data } = useMe();
   const qc = useQueryClient();
   const navigate = useNavigate();
   const roles = data?.roles ?? [];
-  const links = roles.flatMap((r) => NAV[r] ?? []);
+  const links: NavItem[] = roles.flatMap((r) => NAV[r] ?? []);
 
   async function signOut() {
     await qc.cancelQueries();

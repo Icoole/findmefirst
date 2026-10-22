@@ -35,8 +35,8 @@ function Company() {
   const set = (k: keyof Emp, v: string) => setE((s) => ({ ...s, [k]: v }));
 
   async function save() {
-    const { company_name, industry, website, address, contact_name, contact_phone, rc_number } = e;
-    const { error } = await supabase.from("employers").update({ company_name, industry, website, address, contact_name, contact_phone, rc_number }).eq("user_id", emp!.user_id);
+    const n = (v: string | null | undefined) => v ?? null;
+    const { error } = await supabase.from("employers").update({ company_name: e.company_name ?? "", industry: n(e.industry), website: n(e.website), address: n(e.address), contact_name: n(e.contact_name), contact_phone: n(e.contact_phone), rc_number: n(e.rc_number) }).eq("user_id", emp!.user_id);
     if (error) return toast.error(error.message);
     toast.success("Saved");
     qc.invalidateQueries({ queryKey: ["employer"] });
