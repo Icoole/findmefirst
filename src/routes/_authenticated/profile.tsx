@@ -17,7 +17,7 @@ import { DEGREE_CLASSES, DOC_KINDS, INSTITUTION_TYPES, NG_STATES, NYSC_STATUS, Q
 type Profile = Database["public"]["Tables"]["graduate_profiles"]["Row"];
 
 export const Route = createFileRoute("/_authenticated/profile")({
-  head: () => ({ meta: [{ title: "My profile — Recruiter" }] }),
+  head: () => ({ meta: [{ title: "My profile — Findme" }] }),
   component: ProfilePage,
 });
 

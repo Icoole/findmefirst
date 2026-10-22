@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Field } from "@/components/Field";
 
 export const Route = createFileRoute("/_authenticated/assessments")({
-  head: () => ({ meta: [{ title: "Tests — Recruiter" }] }),
+  head: () => ({ meta: [{ title: "Tests — Findme" }] }),
   component: Assessments,
 });
 

@@ -7,9 +7,9 @@ import hero from "@/assets/hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Recruiter — Connect Nigerian graduates with employers" },
+      { title: "Findme — Connect Nigerian graduates with employers" },
       { name: "description", content: "Graduates list their school, degree class and certificates. Employers filter by school, class of degree and age, invite candidates and run monitored job tests." },
-      { property: "og:title", content: "Recruiter — Graduate recruitment & assessment" },
+      { property: "og:title", content: "Findme — Graduate recruitment & assessment" },
       { property: "og:description", content: "Search, shortlist, invite and test Nigerian graduates — no job post needed." },
     ],
   }),
@@ -60,7 +60,7 @@ function Index() {
           ))}
         </div>
       </section>
-      <footer className="border-t py-8 text-center text-sm text-muted-foreground">© {new Date().getFullYear()} Recruiter</footer>
+      <footer className="border-t py-8 text-center text-sm text-muted-foreground">© {new Date().getFullYear()} Findme</footer>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_authenticated/onboarding")({
-  head: () => ({ meta: [{ title: "Choose account type — Recruiter" }] }),
+  head: () => ({ meta: [{ title: "Choose account type — Findme" }] }),
   component: Onboarding,
 });
 
@@ -24,7 +24,7 @@ function Onboarding() {
   ];
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <h1 className="text-3xl font-bold">Welcome to Recruiter</h1>
+      <h1 className="text-3xl font-bold">Welcome to Findme</h1>
       <p className="mt-2 text-muted-foreground">How will you use the platform?</p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {opts.map((o) => (

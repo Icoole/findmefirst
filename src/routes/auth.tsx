@@ -11,10 +11,10 @@ import { Logo } from "@/components/Logo";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in — Recruiter" },
-      { name: "description", content: "Sign in or create your Recruiter account as a graduate or employer." },
-      { property: "og:title", content: "Sign in — Recruiter" },
-      { property: "og:description", content: "Sign in or create your Recruiter account." },
+      { title: "Sign in — Findme" },
+      { name: "description", content: "Sign in or create your Findme account as a graduate or employer." },
+      { property: "og:title", content: "Sign in — Findme" },
+      { property: "og:description", content: "Sign in or create your Findme account." },
     ],
   }),
   component: AuthPage,

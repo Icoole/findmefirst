@@ -6,7 +6,7 @@ import { useMe } from "@/hooks/use-auth";
 import { Badge } from "@/components/ui/badge";
 
 export const Route = createFileRoute("/_authenticated/results")({
-  head: () => ({ meta: [{ title: "Invites & results — Recruiter" }] }),
+  head: () => ({ meta: [{ title: "Invites & results — Findme" }] }),
   component: Results,
 });
 

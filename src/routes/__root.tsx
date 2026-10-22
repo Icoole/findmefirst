@@ -80,9 +80,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Recruiter — Graduate recruitment platform" },
+      { title: "Findme — Graduate recruitment platform" },
       { name: "description", content: "Connect Nigerian graduates with employers through filtering, invites and monitored tests." },
-            { property: "og:title", content: "Recruiter — Graduate recruitment platform" },
+            { property: "og:title", content: "Findme — Graduate recruitment platform" },
       { property: "og:description", content: "Connect Nigerian graduates with employers through filtering, invites and monitored tests." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

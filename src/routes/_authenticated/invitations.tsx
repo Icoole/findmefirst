@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export const Route = createFileRoute("/_authenticated/invitations")({
-  head: () => ({ meta: [{ title: "Invitations — Recruiter" }] }),
+  head: () => ({ meta: [{ title: "Invitations — Findme" }] }),
   component: Invitations,
 });
 

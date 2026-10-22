@@ -13,7 +13,7 @@ import { Field } from "@/components/Field";
 type Emp = Database["public"]["Tables"]["employers"]["Row"];
 
 export const Route = createFileRoute("/_authenticated/company")({
-  head: () => ({ meta: [{ title: "Company profile — Recruiter" }] }),
+  head: () => ({ meta: [{ title: "Company profile — Findme" }] }),
   component: Company,
 });
 
