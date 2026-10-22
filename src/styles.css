@@ -7,11 +7,8 @@
 /*
  * Design system definition.
  *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
+ * Findme brand: deep ink navy + warm amber "light at the end of the tunnel"
+ * on warm paper. Editorial serif display (Fraunces) + Instrument Sans body.
  *
  * To add a new semantic color:
  * 1. Add the variable to :root (light value) and .dark (dark value)
@@ -69,45 +66,45 @@
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.982 0.008 95);
-  --foreground: oklch(0.22 0.03 160);
+  --background: oklch(0.977 0.008 84);
+  --foreground: oklch(0.26 0.04 265);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.03 160);
+  --card-foreground: oklch(0.26 0.04 265);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.03 160);
-  --primary: oklch(0.42 0.11 158);
-  --primary-foreground: oklch(0.98 0.01 95);
-  --secondary: oklch(0.94 0.02 140);
-  --secondary-foreground: oklch(0.3 0.06 158);
-  --muted: oklch(0.95 0.012 95);
-  --muted-foreground: oklch(0.5 0.03 160);
-  --accent: oklch(0.93 0.035 150);
-  --accent-foreground: oklch(0.3 0.08 158);
-  --highlight: oklch(0.82 0.15 82);
-  --highlight-foreground: oklch(0.25 0.05 70);
+  --popover-foreground: oklch(0.26 0.04 265);
+  --primary: oklch(0.3 0.065 265);
+  --primary-foreground: oklch(0.977 0.008 84);
+  --secondary: oklch(0.925 0.018 265);
+  --secondary-foreground: oklch(0.3 0.06 265);
+  --muted: oklch(0.945 0.01 84);
+  --muted-foreground: oklch(0.48 0.03 265);
+  --accent: oklch(0.935 0.03 84);
+  --accent-foreground: oklch(0.3 0.07 70);
+  --highlight: oklch(0.8 0.15 70);
+  --highlight-foreground: oklch(0.25 0.06 60);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --warning: oklch(0.75 0.15 65);
-  --border: oklch(0.9 0.015 120);
-  --input: oklch(0.9 0.015 120);
-  --ring: oklch(0.42 0.11 158);
-  --chart-1: oklch(0.42 0.11 158);
-  --chart-2: oklch(0.82 0.15 82);
-  --chart-3: oklch(0.6 0.1 200);
-  --chart-4: oklch(0.65 0.15 40);
-  --chart-5: oklch(0.5 0.05 160);
-  --sidebar: oklch(0.26 0.05 160);
-  --sidebar-foreground: oklch(0.95 0.01 95);
-  --sidebar-primary: oklch(0.82 0.15 82);
-  --sidebar-primary-foreground: oklch(0.25 0.05 70);
-  --sidebar-accent: oklch(0.32 0.06 160);
-  --sidebar-accent-foreground: oklch(0.98 0.01 95);
-  --sidebar-border: oklch(0.34 0.05 160);
-  --sidebar-ring: oklch(0.82 0.15 82);
-  --gradient-hero: linear-gradient(135deg, oklch(0.3 0.08 160), oklch(0.42 0.11 158) 60%, oklch(0.5 0.12 150));
-  --shadow-elegant: 0 12px 32px -12px color-mix(in oklab, var(--primary) 40%, transparent);
-  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
-  --font-sans: "Manrope", system-ui, sans-serif;
+  --border: oklch(0.9 0.015 84);
+  --input: oklch(0.9 0.015 84);
+  --ring: oklch(0.3 0.065 265);
+  --chart-1: oklch(0.3 0.065 265);
+  --chart-2: oklch(0.8 0.15 70);
+  --chart-3: oklch(0.6 0.09 210);
+  --chart-4: oklch(0.65 0.14 40);
+  --chart-5: oklch(0.5 0.04 265);
+  --sidebar: oklch(0.985 0.006 84);
+  --sidebar-foreground: oklch(0.26 0.04 265);
+  --sidebar-primary: oklch(0.3 0.065 265);
+  --sidebar-primary-foreground: oklch(0.977 0.008 84);
+  --sidebar-accent: oklch(0.93 0.02 265);
+  --sidebar-accent-foreground: oklch(0.26 0.04 265);
+  --sidebar-border: oklch(0.9 0.015 84);
+  --sidebar-ring: oklch(0.3 0.065 265);
+  --gradient-hero: linear-gradient(140deg, oklch(0.2 0.04 265) 0%, oklch(0.26 0.055 268) 55%, oklch(0.42 0.08 60) 118%);
+  --shadow-elegant: 0 12px 32px -12px color-mix(in oklab, var(--primary) 35%, transparent);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Instrument Sans", system-ui, sans-serif;
 }
 
 @layer base {
@@ -123,9 +120,18 @@
 
 @layer base {
   body { font-family: var(--font-sans); }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    font-variation-settings: "opsz" 100;
+  }
 }
 
 @utility bg-hero {
   background-image: var(--gradient-hero);
+}
+
+@utility hero-glow {
+  background-image: radial-gradient(55% 70% at 82% 24%, oklch(0.8 0.15 70 / 0.28), transparent 70%);
 }

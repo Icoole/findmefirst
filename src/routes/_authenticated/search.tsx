@@ -13,7 +13,7 @@ import { useEmployer } from "./company";
 import { DEGREE_CLASSES, INSTITUTION_TYPES, NG_STATES, ageFromDob, dobForAge } from "@/lib/constants";
 
 export const Route = createFileRoute("/_authenticated/search")({
-  head: () => ({ meta: [{ title: "Find graduates — Recruiter" }] }),
+  head: () => ({ meta: [{ title: "Find graduates — Findme" }] }),
   component: SearchPage,
 });
 

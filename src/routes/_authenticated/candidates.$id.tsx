@@ -9,7 +9,7 @@ import { useEmployer } from "./company";
 import { ageFromDob } from "@/lib/constants";
 
 export const Route = createFileRoute("/_authenticated/candidates/$id")({
-  head: () => ({ meta: [{ title: "Candidate — Recruiter" }] }),
+  head: () => ({ meta: [{ title: "Candidate — Findme" }] }),
   component: Candidate,
 });
 

@@ -11,10 +11,10 @@ import { Logo } from "@/components/Logo";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in — Recruiter" },
-      { name: "description", content: "Sign in or create your Recruiter account as a graduate or employer." },
-      { property: "og:title", content: "Sign in — Recruiter" },
-      { property: "og:description", content: "Sign in or create your Recruiter account." },
+      { title: "Sign in — Findme" },
+      { name: "description", content: "Sign in or create your Findme account as a graduate or employer." },
+      { property: "og:title", content: "Sign in — Findme" },
+      { property: "og:description", content: "Sign in or create your Findme account." },
     ],
   }),
   component: AuthPage,
@@ -58,7 +58,7 @@ function AuthPage() {
   return (
     <div className="grid min-h-screen place-items-center bg-hero px-4">
       <div className="w-full max-w-sm rounded-2xl bg-card p-8 shadow-elegant">
-        <Link to="/" className="text-primary"><Logo /></Link>
+        <Link to="/" className="inline-block"><Logo className="h-9" /></Link>
         <h1 className="mt-6 text-2xl font-bold">{mode === "in" ? "Welcome back" : "Create your account"}</h1>
         <form onSubmit={submit} className="mt-6 space-y-4">
           <div><Label htmlFor="email">Email</Label><Input id="email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></div>

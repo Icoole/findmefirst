@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/_authenticated/test/$invitationId")({
-  head: () => ({ meta: [{ title: "Assessment — Recruiter" }] }),
+  head: () => ({ meta: [{ title: "Assessment — Findme" }] }),
   component: TestPage,
 });
 
