@@ -37,22 +37,22 @@ export function AppShell() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-30 border-b bg-sidebar text-sidebar-foreground">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
-          <Link to="/dashboard"><Logo /></Link>
+      <header className="sticky top-0 z-30 border-b bg-background/90 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-2.5">
+          <Link to="/dashboard" className="shrink-0"><Logo className="h-9" /></Link>
           <nav className="flex flex-1 gap-1 overflow-x-auto">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
-                className="whitespace-nowrap rounded-md px-3 py-1.5 text-sm text-sidebar-foreground/80 hover:bg-sidebar-accent"
-                activeProps={{ className: "bg-sidebar-accent text-sidebar-primary font-semibold" }}
+                className="whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground transition hover:bg-accent hover:text-foreground"
+                activeProps={{ className: "bg-secondary text-primary font-semibold" }}
               >
                 {l.label}
               </Link>
             ))}
           </nav>
-          <Button size="icon" variant="ghost" onClick={signOut} aria-label="Sign out" className="hover:bg-sidebar-accent hover:text-sidebar-foreground">
+          <Button size="icon" variant="ghost" onClick={signOut} aria-label="Sign out" className="text-muted-foreground hover:bg-accent hover:text-foreground">
             <LogOut />
           </Button>
         </div>

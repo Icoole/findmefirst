@@ -1,8 +1,13 @@
+import logo from "@/assets/logo.png";
+
 export function Logo({ className = "" }: { className?: string }) {
   return (
-    <span className={`flex items-center gap-2 font-display text-lg font-bold ${className}`}>
-      <span className="grid h-8 w-8 place-items-center rounded-lg bg-highlight text-highlight-foreground">R</span>
-      Findme
-    </span>
+    <img
+      src={logo}
+      alt="Findme"
+      width={916}
+      height={345}
+      className={`w-auto ${className}`}
+    />
   );
 }
