@@ -15,6 +15,13 @@
       "when": 1792538930597,
       "tag": "0001_migration",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794147917825,
+      "tag": "0002_add_findme_demo_directory",
+      "breakpoints": true
     }
   ]
 }

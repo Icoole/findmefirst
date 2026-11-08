@@ -107,6 +107,117 @@ export type Database = {
           },
         ]
       }
+      demo_candidates: {
+        Row: {
+          candidate_type: string
+          certifications: string[]
+          cgpa: number
+          cgpa_scale: number
+          course: string
+          created_at: string
+          credential_status: string
+          current_city: string
+          degree_class: string
+          display_name: string
+          experience_years: number
+          graduation_year: number
+          id: string
+          industry: string
+          institution: string
+          institution_type: string
+          open_to_any_location: boolean
+          preferred_locations: string[]
+          profile_summary: string
+          qualification: string
+          sample_label: string
+          skills: string[]
+          state_of_residence: string
+        }
+        Insert: {
+          candidate_type: string
+          certifications?: string[]
+          cgpa: number
+          cgpa_scale: number
+          course: string
+          created_at?: string
+          credential_status?: string
+          current_city: string
+          degree_class: string
+          display_name: string
+          experience_years?: number
+          graduation_year: number
+          id?: string
+          industry: string
+          institution: string
+          institution_type: string
+          open_to_any_location?: boolean
+          preferred_locations?: string[]
+          profile_summary?: string
+          qualification: string
+          sample_label?: string
+          skills?: string[]
+          state_of_residence: string
+        }
+        Update: {
+          candidate_type?: string
+          certifications?: string[]
+          cgpa?: number
+          cgpa_scale?: number
+          course?: string
+          created_at?: string
+          credential_status?: string
+          current_city?: string
+          degree_class?: string
+          display_name?: string
+          experience_years?: number
+          graduation_year?: number
+          id?: string
+          industry?: string
+          institution?: string
+          institution_type?: string
+          open_to_any_location?: boolean
+          preferred_locations?: string[]
+          profile_summary?: string
+          qualification?: string
+          sample_label?: string
+          skills?: string[]
+          state_of_residence?: string
+        }
+        Relationships: []
+      }
+      demo_companies: {
+        Row: {
+          company_size: string
+          created_at: string
+          display_name: string
+          id: string
+          industry: string
+          location_state: string
+          recruitment_focus: string[]
+          sample_label: string
+        }
+        Insert: {
+          company_size: string
+          created_at?: string
+          display_name: string
+          id?: string
+          industry: string
+          location_state: string
+          recruitment_focus?: string[]
+          sample_label?: string
+        }
+        Update: {
+          company_size?: string
+          created_at?: string
+          display_name?: string
+          id?: string
+          industry?: string
+          location_state?: string
+          recruitment_focus?: string[]
+          sample_label?: string
+        }
+        Relationships: []
+      }
       documents: {
         Row: {
           created_at: string
@@ -114,7 +225,10 @@ export type Database = {
           kind: string
           name: string
           path: string
+          reviewed_at: string | null
           user_id: string
+          verification_note: string | null
+          verification_status: string
         }
         Insert: {
           created_at?: string
@@ -122,7 +236,10 @@ export type Database = {
           kind: string
           name: string
           path: string
+          reviewed_at?: string | null
           user_id: string
+          verification_note?: string | null
+          verification_status?: string
         }
         Update: {
           created_at?: string
@@ -130,7 +247,10 @@ export type Database = {
           kind?: string
           name?: string
           path?: string
+          reviewed_at?: string | null
           user_id?: string
+          verification_note?: string | null
+          verification_status?: string
         }
         Relationships: []
       }
@@ -177,21 +297,29 @@ export type Database = {
         Row: {
           available: boolean
           bio: string | null
+          candidate_type: string
+          certifications: string[]
           cgpa: number | null
+          cgpa_scale: number
           course: string | null
           created_at: string
+          current_city: string | null
           date_of_birth: string | null
           degree_class: string | null
           email: string | null
+          experience_years: number
           faculty: string | null
           full_name: string
           gender: string | null
           graduation_year: number | null
+          industry: string | null
           institution: string | null
           institution_type: string | null
           nysc_status: string | null
+          open_to_any_location: boolean
           phone: string | null
           preferred_location: string | null
+          preferred_locations: string[]
           qualification: string | null
           skills: string[]
           state_of_residence: string | null
@@ -201,21 +329,29 @@ export type Database = {
         Insert: {
           available?: boolean
           bio?: string | null
+          candidate_type?: string
+          certifications?: string[]
           cgpa?: number | null
+          cgpa_scale?: number
           course?: string | null
           created_at?: string
+          current_city?: string | null
           date_of_birth?: string | null
           degree_class?: string | null
           email?: string | null
+          experience_years?: number
           faculty?: string | null
           full_name?: string
           gender?: string | null
           graduation_year?: number | null
+          industry?: string | null
           institution?: string | null
           institution_type?: string | null
           nysc_status?: string | null
+          open_to_any_location?: boolean
           phone?: string | null
           preferred_location?: string | null
+          preferred_locations?: string[]
           qualification?: string | null
           skills?: string[]
           state_of_residence?: string | null
@@ -225,21 +361,29 @@ export type Database = {
         Update: {
           available?: boolean
           bio?: string | null
+          candidate_type?: string
+          certifications?: string[]
           cgpa?: number | null
+          cgpa_scale?: number
           course?: string | null
           created_at?: string
+          current_city?: string | null
           date_of_birth?: string | null
           degree_class?: string | null
           email?: string | null
+          experience_years?: number
           faculty?: string | null
           full_name?: string
           gender?: string | null
           graduation_year?: number | null
+          industry?: string | null
           institution?: string | null
           institution_type?: string | null
           nysc_status?: string | null
+          open_to_any_location?: boolean
           phone?: string | null
           preferred_location?: string | null
+          preferred_locations?: string[]
           qualification?: string | null
           skills?: string[]
           state_of_residence?: string | null
